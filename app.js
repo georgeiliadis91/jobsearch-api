@@ -1,13 +1,11 @@
 const express = require('express');
-
 const app = express();
 const db = require('./config/database');
+const cors = require('cors');
 
+app.use(cors());
 app.use(express.json());
 
-// Database
-
-// Test DB
 db.authenticate()
 	.then(() => console.log('Database connected...'))
 	.catch(err => console.log('Error: ' + err));
@@ -15,7 +13,6 @@ db.authenticate()
 // Index route
 app.get('/', async (req, res) => res.send('hello there'));
 
-// Gig routes
 app.use('/joblistings', require('./routes/joblistings'));
 
 app.use('/users', require('./routes/users'));
