@@ -40,7 +40,5 @@ async function fetchGithub() {
 			.catch(error => console.log(error));
 
 		onPage++;
-		console.log('resCOunt: ' + resultCount);
-		console.log('onPage: ' + onPage);
 	}
 }

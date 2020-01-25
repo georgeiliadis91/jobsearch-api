@@ -2,9 +2,9 @@ const express = require('express');
 const app = express();
 const db = require('./config/database');
 const cors = require('cors');
-const cronjob = require('./cron/cronjob');
+// const cronjob = require('./cron/cronjob');
 
-cronjob.start();
+// cronjob.start();
 
 app.use(cors());
 app.use(express.json());
